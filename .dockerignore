@@ -1,0 +1,10 @@
+build
+venv
+*.egg-info
+tests
+.gitignore
+.travis.yml
+LICENSE
+Dockerfile
+.dockerignore
+Dockerfile-nomodel
