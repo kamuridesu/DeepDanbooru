@@ -56,6 +56,18 @@ To install it with tensorflow, add `tensorflow` extra package.
 > deepdanbooru evaluate [image_file_path or folder]... --project-path [your_project_folder] --allow-folder
 ```
 
+## Running on Docker
+
+In the container, the dataset is located on the folder /app/model. You can always mount a volume to use a dataset in your local disk.
+
+You'll also need to mount a volume using the folder containing your images, eg:
+
+```sh
+docker run --rm -it -v /home/kamuri/images/:/app/data kamuri/deepdanbooru evaluate --project-path "/app/model" "/app/data/" --allow-folder
+```
+
+If you do not want to use the dataset included with the image, you can use the image without it. The image is `kamuri/deepdanbooru:nomodel`
+
 ## Dataset Structure
 DeepDanbooru uses following folder structure for input dataset. SQLite file can be any name, but must be located in same folder to `images` folder. All of image files are located in sub-folder which named first 2 characters of its filename.
 ```
