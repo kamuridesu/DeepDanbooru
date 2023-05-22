@@ -7,7 +7,7 @@ import os
 import deepdanbooru as dd
 import tensorflow.lite as tflite
 
-__version__ = "1.0.1"
+__version__ = "1.0.2"
 
 
 @click.version_option(prog_name="DeepDanbooru", version=__version__)
