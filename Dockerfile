@@ -9,7 +9,7 @@ RUN rm -rf model.zip
 
 FROM python:3.10-slim
 WORKDIR /app
-COPY --from=0 /model/* /app/
+COPY --from=0 /model/* /app/model
 COPY ./requirements.txt .
 RUN pip install -r requirements.txt
 COPY . .
