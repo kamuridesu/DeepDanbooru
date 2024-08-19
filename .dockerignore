@@ -26,7 +26,6 @@ test.py
 *.bmp
 *.gif
 *.h5
-*.txt
 *.json
 
 # Byte-compiled / optimized / DLL files

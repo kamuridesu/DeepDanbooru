@@ -1,4 +1,4 @@
-FROM debian:bullseye-slim
+FROM debian:12.6-slim
 RUN apt update
 RUN apt install unzip curl -y
 WORKDIR /model
@@ -9,9 +9,9 @@ RUN rm -rf model.zip
 
 FROM python:3.10-slim
 WORKDIR /app
-COPY --from=0 /model/* /app/model
 COPY ./requirements.txt .
 RUN pip install -r requirements.txt
+COPY --from=0 /model/* /app/model
 COPY . .
 RUN pip install ".[tensorflow]"
 ENTRYPOINT [ "deepdanbooru" ]
